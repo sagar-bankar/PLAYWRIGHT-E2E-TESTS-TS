@@ -4,9 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-   "login":"npx playwright test tests/functional/login.spec.ts --headed",
-   "demo":"npx playwright test tests/functional/login.spec.ts --headed"
-
+    "demo:global": "npx playwright test tests/functional/login.spec.ts",
+    "login": "npx playwright test tests/functional/login.spec.ts --headed",
+    "adv:api": "set DEBUG=pw:api && npx playwright test tests/functional/login.spec.ts --headed",
+    "config": "npx playwright test tests/demo/mytest.spec.ts --headed",
+    "appointment": "npx playwright test tests/functional/make.appointment.spec.ts --headed",
+    "debug": "npx playwright test tests/demo/Dedug.make.appointment.spec.ts --headed",
+    "debug:trace": "npx playwright test tests/demo/Dedug.make.appointment.spec.ts --trace on",
+    "debug:pause": "npx playwright test tests/demo/Dedug.pause.make.appointment.spec.ts --headed",
+    "debug:CLI": "set PWDEBUG=1 && npx playwright test tests/demo/Dedug.make.appointment.spec.ts --headed",
+    "debug:ui": "npx playwright test tests/demo/Dedug.UI.make.appointment.spec copy.ts --ui --headed"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +21,10 @@
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.63.0",
-    "@types/node": "^22.20.2"
+    "@types/node": "^22.20.3",
+    "allure-playwright": "^3.12.1"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.0"
   }
 }

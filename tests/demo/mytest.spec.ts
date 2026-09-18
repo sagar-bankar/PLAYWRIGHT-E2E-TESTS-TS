@@ -8,3 +8,13 @@ test("should load homepage with correct title", async ({ page }) => {
   // 3.assert header Text
   await expect(page.locator("//h1")).toHaveText("CURA Healthcare Service");
 });
+
+test.only("should demo config", async ({ page }, tesInfo) => {
+  // 1.Goto the homepage
+  console.log(`>>config at run time ${tesInfo.config}`);
+  //await expect(page.locator("//h1")).toHaveText("CURA Healthcare Service");
+});
+
+test.only("should demo fixtures", async ({ page, browserName,request }, tesInfo) => {
+  console.log(`>>test run on ${browserName}`);
+});
