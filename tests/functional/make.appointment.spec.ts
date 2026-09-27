@@ -1,22 +1,35 @@
 import { test, expect } from "@playwright/test";
-
+import { log } from "../helpers/logger";
 test.describe("make appointment", () => {
-  test.beforeEach("login with valid cred", async ({ page }) => {
+  test.beforeEach("login with valid cred", async ({ page }, testInfo) => {
+    //get the url from the config file
+    const envConfig = testInfo.project.use as any;
+
+    //custom logs
+    await log("info", `Launching the web app in ${envConfig.envName}`);
+
     //1.Launch URL
+    //await page.goto(envConfig.appURL);
     await page.goto("https://katalon-demo-cura.herokuapp.com/");
 
     //2.click on appointment
     page.getByRole("link", { name: "Make Appointment" }).click();
 
     //3.fill username and password
-    await page.getByLabel("Username").fill("John Doe");
-    await page.getByLabel("Password").fill("ThisIsNotAPassword");
+    //fetch username from .env file
+    await page.getByLabel("Username").fill(process.env.TEST_USER_NAME);
+    //await page.getByLabel("Username").fill("John Doe");
+    await page.getByLabel("Password").fill(process.env.TEST_PASSWORD);
+    //await page.getByLabel("Password").fill("ThisIsNotAPassword");
 
     //4.click on login
     await page.getByRole("button", { name: "Login" }).click();
 
     //5.assert the "Make Appointment"
     await expect(page.locator("h2")).toContainText("Make Appointment");
+
+    await log("info", `log in successfully done....`);
+    await log("error", `The next page is not load...`);
   });
 
   //tests go here

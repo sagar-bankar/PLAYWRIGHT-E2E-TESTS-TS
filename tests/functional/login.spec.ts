@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("Login Functionality", () => {
-  test.beforeEach("Go to the Login", async ({ page }) => {
+  test.beforeEach("Go to the Login", async ({ page, }) => {
     //1.Launch URL
     await page.goto("https://katalon-demo-cura.herokuapp.com/", {
       timeout: 30_000,

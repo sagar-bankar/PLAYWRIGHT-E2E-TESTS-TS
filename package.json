@@ -4,11 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test:e2e": "npx playwright test tests/e2e/orangehrm.e2e.spec.ts --headed",
+    "data:sensitive": "npx playwright test tests/functional/make.appointment.spec.ts --headed",
+    "dev:appointment": "npx playwright test --config=config/dev.playwright.config.ts tests/functional/make.appointment.spec.ts --headed",
+    "test:appointment": "npx playwright test --config=config/test.playwright.config.ts tests/functional/make.appointment.spec.ts --headed",
+    "data:param": "npx playwright test tests/functional/params.make.appointment.spec.ts --headed",
     "demo:global": "npx playwright test tests/functional/login.spec.ts",
+    "multy:browser": "npx playwright test tests/demo/mytest.spec.ts --headed",
+    "data:constant": "npx playwright test tests/demo/mytest.spec.ts --headed",
     "login": "npx playwright test tests/functional/login.spec.ts --headed",
     "adv:api": "set DEBUG=pw:api && npx playwright test tests/functional/login.spec.ts --headed",
     "config": "npx playwright test tests/demo/mytest.spec.ts --headed",
     "appointment": "npx playwright test tests/functional/make.appointment.spec.ts --headed",
+    "logger:appointment": "npx playwright test tests/functional/make.appointment.spec.ts --headed",
     "debug": "npx playwright test tests/demo/Dedug.make.appointment.spec.ts --headed",
     "debug:trace": "npx playwright test tests/demo/Dedug.make.appointment.spec.ts --trace on",
     "debug:pause": "npx playwright test tests/demo/Dedug.pause.make.appointment.spec.ts --headed",
@@ -25,6 +33,7 @@
     "allure-playwright": "^3.12.1"
   },
   "dependencies": {
+    "chalk": "^6.0.0",
     "dotenv": "^18.0.0"
   }
 }

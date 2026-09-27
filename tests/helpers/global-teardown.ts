@@ -1,26 +1,8 @@
-import { FullConfig } from "@playwright/test";
-import { exec } from "child_process";
-/*
-export default async function globalTeardown(config: FullConfig) {
-   //Executed after all workers complete. Good place for cleanup tasks 
-  console.log('[INFO\]: Starting the global teardown process ...');
+﻿export default async function globalTeardown() {
+  console.log("[INFO]: Starting global teardown...");
 
-  // Generate Allure report for local runs
-  if (process.env.RUNNER?.toUpperCase() === "LOCAL") {
-    console.log(" >> Local run detected - starting Allure server...");
-    
-    exec("allure serve", (error, stdout, stderr) => {
-        if (error) {
-            console.error("ERROR: Starting Allure server:", error.message);
-        }
-    });
-  }
+  // Add cleanup work here
+  // Example: generate Allure report or delete temp files
 
-  console.log('[INFO]: Completed the global  teardown process ...');
-}
-*/
-
-
-export default async function globalTeardown(config: FullConfig) {
-    console.log("******** GLOBAL TEARDOWN EXECUTED ********");
+  console.log("[INFO]: Completed global teardown.");
 }

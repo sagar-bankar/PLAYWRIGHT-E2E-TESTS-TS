@@ -11,7 +11,7 @@ dotenv.config({ path: path.resolve(__dirname, ".env") });
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
-export default defineConfig({
+export const baseConfig=defineConfig({
   testDir: "./tests",
   /* Run tests in files in parallel */
   fullyParallel: false,
@@ -89,6 +89,11 @@ export default defineConfig({
     //   name: 'Google Chrome',
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
+
+    // {
+    //   name:'BlackBerry Z30 landscape',
+    //   use:{...devices["Galaxy A55"]}
+    // }
   ],
 
   /* Run your local dev server before starting the tests */

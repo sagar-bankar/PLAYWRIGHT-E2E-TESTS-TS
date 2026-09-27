@@ -10,3 +10,17 @@
     "skipLibCheck": true
   }
 }
+
+// {
+//   "compilerOptions": {
+//     "target": "ESNext",
+//     "module": "CommonJS",
+//     "esModuleInterop": true,
+//     "resolveJsonModule": true,
+//     "strict": false,
+//     "noImplicitAny": false
+//   },
+
+//   "include": ["tests/**/*.ts", "data/**/*.ts", "playwright.config.ts"],
+//   "exclude": ["node_module", "dist"]
+// }
