@@ -47,7 +47,7 @@ export const baseConfig=defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
     navigationTimeout: 30_000,
-    screenshot: "on",
+    screenshot: "only-on-failure",
   },
 
   /* Configure projects for major browsers */

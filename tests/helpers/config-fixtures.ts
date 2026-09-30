@@ -5,6 +5,7 @@ export type EnvConfig = {
   appURL: string;
   dbConfig: {};
   orangehrmappURL:string;
+  apiURL:string;
 };
 
 export const test = base.extend<EnvConfig>({
@@ -12,4 +13,5 @@ export const test = base.extend<EnvConfig>({
   appURL: ["provideURL", { option: true }],
   dbConfig: [{}, { option: true }],
   orangehrmappURL: ["provideURL", { option: true }],
+  apiURL: ["provideURL", { option: true }],
 });

@@ -2,5 +2,11 @@
     "STATUSCODE":{
         "SUCCESS":200,
         "ValidationError":707
+    },
+
+    "REQ_RES_ENDPOINS":{
+        "GET_USER_LIST":"/users?page=2",
+        "POST_USER":"/users"
     }
+
 }

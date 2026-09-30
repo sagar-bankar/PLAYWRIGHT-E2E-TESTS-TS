@@ -12,6 +12,7 @@ export default defineConfig<EnvConfig>({
     envName: "test",
     appURL: "https://katalon-demo-cura.herokuapp.com/",
     orangehrmappURL: "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+    apiURL: "https://reqres.in/api",
 
     dbConfig: { server: "", dbName: "", connectionstr: "" },
   },

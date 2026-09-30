@@ -12,7 +12,7 @@ export default class BasePage {
 
   async navigateTo(path: string) {
     await log("info", `Navigating to the path :${path}`);
-    await this.page.goto(path);
+    await this.page.goto(path,{timeout:10_000});
   }
 
   //click actions
