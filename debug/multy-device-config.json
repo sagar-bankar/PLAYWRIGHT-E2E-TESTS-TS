@@ -1,0 +1,108 @@
+{
+  "argv": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\Playwright practice\\PLAYWRIGHT-E2E-TESTS-TS\\node_modules\\@playwright\\test\\cli.js",
+    "test",
+    "tests/demo/mytest.spec.ts",
+    "--headed"
+  ],
+  "configFile": "C:\\Playwright practice\\PLAYWRIGHT-E2E-TESTS-TS\\playwright.config.ts",
+  "rootDir": "C:\\Playwright practice\\PLAYWRIGHT-E2E-TESTS-TS\\tests",
+  "failOnFlakyTests": false,
+  "forbidOnly": false,
+  "fullyParallel": false,
+  "globalSetup": "C:\\Playwright practice\\PLAYWRIGHT-E2E-TESTS-TS\\tests\\helpers\\global-setup.ts",
+  "globalTeardown": "C:\\Playwright practice\\PLAYWRIGHT-E2E-TESTS-TS\\tests\\helpers\\global-teardown.ts",
+  "globalTimeout": 0,
+  "grep": {},
+  "grepInvert": null,
+  "maxFailures": 0,
+  "metadata": { "actualWorkers": 2 },
+  "preserveOutput": "always",
+  "projects": [
+    {
+      "grep": {},
+      "grepInvert": null,
+      "outputDir": "C:\\Playwright practice\\PLAYWRIGHT-E2E-TESTS-TS\\test-results",
+      "repeatEach": 1,
+      "retries": 0,
+      "metadata": {},
+      "name": "chromium",
+      "testDir": "C:\\Playwright practice\\PLAYWRIGHT-E2E-TESTS-TS\\tests",
+      "snapshotDir": "C:\\Playwright practice\\PLAYWRIGHT-E2E-TESTS-TS\\tests",
+      "testIgnore": [],
+      "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+      "timeout": 30000,
+      "use": {
+        "trace": "on-first-retry",
+        "navigationTimeout": 30000,
+        "screenshot": "on",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+        "viewport": { "width": 1280, "height": 720 },
+        "screen": { "width": 1920, "height": 1080 },
+        "deviceScaleFactor": 1,
+        "isMobile": false,
+        "hasTouch": false,
+        "defaultBrowserType": "chromium",
+        "launchOptions": { "args": ["--start-maximized"] },
+        "headless": false
+      },
+      "dependencies": [],
+      "ignoreSnapshots": false,
+      "__projectId": "chromium"
+    },
+    {
+      "grep": {},
+      "grepInvert": null,
+      "outputDir": "C:\\Playwright practice\\PLAYWRIGHT-E2E-TESTS-TS\\test-results",
+      "repeatEach": 1,
+      "retries": 0,
+      "metadata": {},
+      "name": "BlackBerry Z30 landscape",
+      "testDir": "C:\\Playwright practice\\PLAYWRIGHT-E2E-TESTS-TS\\tests",
+      "snapshotDir": "C:\\Playwright practice\\PLAYWRIGHT-E2E-TESTS-TS\\tests",
+      "testIgnore": [],
+      "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+      "timeout": 30000,
+      "use": {
+        "trace": "on-first-retry",
+        "navigationTimeout": 30000,
+        "screenshot": "on",
+        "userAgent": "Mozilla/5.0 (Linux; Android 14; SM-A556B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Mobile Safari/537.36",
+        "viewport": { "width": 480, "height": 1040 },
+        "deviceScaleFactor": 2.25,
+        "isMobile": true,
+        "hasTouch": true,
+        "defaultBrowserType": "chromium",
+        "headless": false
+      },
+      "dependencies": [],
+      "ignoreSnapshots": false,
+      "__projectId": "BlackBerry Z30 landscape"
+    }
+  ],
+  "quiet": false,
+  "reporter": [
+    ["html", null],
+    [
+      "C:\\Playwright practice\\PLAYWRIGHT-E2E-TESTS-TS\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
+      {
+        "details": true,
+        "suiteTitle": true,
+        "environmentInfo": {
+          "name": "Test",
+          "appName": "CURA",
+          "Release": "Release 1.1"
+        }
+      }
+    ]
+  ],
+  "reportSlowTests": { "max": 5, "threshold": 300000 },
+  "shard": null,
+  "tags": [],
+  "updateSnapshots": "missing",
+  "updateSourceMethod": "patch",
+  "version": "1.63.0",
+  "workers": 4,
+  "webServer": null
+}
