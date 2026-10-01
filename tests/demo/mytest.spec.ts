@@ -26,6 +26,6 @@ test("should demo fixtures", async ({
   console.log(`>>list of devices \n ${JSON.stringify(tesInfo.config)}`);
 });
 
-test.only("should demo constant data", async ({ page }, tesInfo) => {
+test("should demo constant data", async ({ page }, tesInfo) => {
   console.log(`>>constants data: ${JSON.stringify(constants.STATUSCODE)}`);
 });

@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test:all": "npx playwright test --config=config/test.playwright.config.ts --headed",
     "test:e2e:all": "npx playwright test --config=config/test.playwright.config.ts tests/e2e --headed",
     "test:e2e:dashboard": "npx playwright test --config=config/test.playwright.config.ts tests/e2e/orangehrm.dashboardisVisible.e2e.spec.ts --headed",
     "test:api": "npx playwright test --config=config/test.playwright.config.ts tests/api/users.api.spec.ts",

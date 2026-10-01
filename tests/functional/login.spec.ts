@@ -11,14 +11,14 @@ test.describe("Login Functionality", () => {
     await page.getByRole("link", { name: "Make Appointment" }).click();
   });
 
-  test("Successfull login", async ({ page }, testInfo) => {
+  test("Successful login with demo credentials", async ({ page }, testInfo) => {
     //3.fill username and password
     await page.getByLabel("Username").fill("John Doe");
     await page.getByLabel("Password").fill("ThisIsNotAPassword");
 
     //custom screenshot
     let fullPageSscreenshot = await page.screenshot({ fullPage: true });
-    testInfo.attach("Successfull login", {
+    testInfo.attach("Successful login", {
       body: fullPageSscreenshot,
       contentType: "image/png",
     });
@@ -32,17 +32,24 @@ test.describe("Login Functionality", () => {
     //await expect(page.locator("h2")).toContainText("Make Appointment",{timeout:10_000});
   });
 
-  test("Unsuccessfull login", async ({ page }) => {
-    //3.fill username and password
-    await page.getByLabel("Username").fill("John Doe");
-    await page.getByLabel("Password").fill("This");
+  const invalidLoginScenarios = [
+    { name: "invalid username", username: "Unknown User", password: "ThisIsNotAPassword" },
+    { name: "invalid password", username: "John Doe", password: "WrongPassword" },
+    { name: "invalid username and password", username: "Unknown User", password: "WrongPassword" },
+    { name: "empty username", username: "", password: "ThisIsNotAPassword" },
+    { name: "empty password", username: "John Doe", password: "" },
+    { name: "empty username and password", username: "", password: "" },
+  ];
 
-    //4.click on login
-    await page.getByRole("button", { name: "Login" }).click();
+  for (const scenario of invalidLoginScenarios) {
+    test(`Rejects login with ${scenario.name}`, async ({ page }) => {
+      await page.getByLabel("Username").fill(scenario.username);
+      await page.getByLabel("Password").fill(scenario.password);
+      await page.getByRole("button", { name: "Login" }).click();
 
-    //5.assert the login failed message
-    await expect(page.locator("#login")).toContainText(
-      "Login failed! Please ensure the username and password are valid.",
-    );
-  });
+      await expect(page.locator("#login")).toContainText(
+        "Login failed! Please ensure the username and password are valid.",
+      );
+    });
+  }
 });
